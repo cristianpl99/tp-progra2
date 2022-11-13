@@ -17,11 +17,11 @@ public abstract class Album  {
 		this.albumLleno = false;
 	}
 	
-	protected int consultarCodigoAlbum() {
+	int consultarCodigoAlbum() {
 		return this.codigo;
 	}
 	
-	protected boolean pegarFigurita(Figurita figurita){
+	boolean pegarFigurita(Figurita figurita){
 			Figurita [] pais = selecciones.get(figurita.consultarPais());
 			if (pais[figurita.consultarNumJugador()-1] == null) {
 				pais[figurita.consultarNumJugador()-1] = figurita;
@@ -31,7 +31,7 @@ public abstract class Album  {
 		return false; 
 	}
 
-	public boolean estaPegada(Figurita figurita) {
+	boolean estaPegada(Figurita figurita) {
 		Figurita[] pais = selecciones.get(figurita.consultarPais());
 		if(pais[figurita.consultarNumJugador()-1]!=null) {
 				return true;
@@ -39,7 +39,7 @@ public abstract class Album  {
 		return false;
 	}
 	
-	protected boolean albumLleno() {
+	boolean albumLleno() {
 		for (Figurita[] pais : selecciones.values()){
 			for (Figurita figurita : pais){
 				if (figurita == null){
@@ -65,7 +65,7 @@ public abstract class Album  {
 		return true;
 	}
 	
-	protected final void chequearAlbumLleno(){
+	final void chequearAlbumLleno(){
 		this.albumLleno = albumLleno();
 	}
 }

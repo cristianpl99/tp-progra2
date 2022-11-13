@@ -13,20 +13,20 @@ public  class Figurita {
 		this.valorBase = valorBase;
 		
 	}
-	
-	protected String consultarPais() {
+		
+	String consultarPais() {
 		return this.pais;
 	}
 
-	protected int consultarNumJugador() {
+	int consultarNumJugador() {
 		return this.numJugador;
 	}
 	
-	protected int consultarNumeroIdentificador() {
+	int consultarNumeroIdentificador() {
 		return this.numeroIdentificador;
 	}
 
-	protected double consultarValor() {
+	double consultarValor() {
 		return this.valorBase;
 	}	
 }

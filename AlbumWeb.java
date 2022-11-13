@@ -10,7 +10,7 @@ public class AlbumWeb extends Album{
 		
 	}
 	
-	protected int consultarCodigoPromocional() {
+	int consultarCodigoPromocional() {
 		return codigoPromocional;
 	}
 }

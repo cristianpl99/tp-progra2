@@ -14,30 +14,30 @@ public class Participante {
 		this.album = album;
 		this.coleccion = coleccion;
 	}
-	protected int consultarDNI() {
+	int consultarDNI() {
 		return this.dni;
 	}
 
-	protected String consultarNombre() {
+	String consultarNombre() {
 		return this.nombre;
 	}
 	
-	protected Album consultarAlbum() {
+	Album consultarAlbum() {
 		return this.album;	
 	}
 
-	protected boolean consultarAlbumLleno()
+	boolean consultarAlbumLleno()
 	{
 		return album.llenoElAlbum();	
 	}
 	
-	protected void agregarFiguritasAColeccion(ArrayList<Figurita>sobre) {
+	void agregarFiguritasAColeccion(ArrayList<Figurita>sobre) {
 		for(Figurita figurita : sobre) {
 			coleccion.add(figurita);	
 			}
 	}
 
-	protected List<String> pegarFiguritas(){
+	List<String> pegarFiguritas(){
 		ArrayList<String> pegadas = new ArrayList<String>();
 		Iterator<Figurita> iterador = coleccion.iterator();
 		while(iterador.hasNext())  {
@@ -50,7 +50,7 @@ public class Participante {
 		return pegadas;	
 	}
 	
-	protected String aplicarSorteoInstantaneo() {
+	String aplicarSorteoInstantaneo() {
 		if(this.tieneAlbumTradicional()) {
 			AlbumTradicional album = (AlbumTradicional) this.album;
 			return album.aplicarSorteoInstantaneo();
@@ -61,18 +61,18 @@ public class Participante {
 			}
 		}
 
-	protected int buscarFiguritaRepetida() {
+	int buscarFiguritaRepetida() {
 		if (coleccion.size() == 0) {
 			return -1;
 			}
 		return coleccion.get(0).consultarNumeroIdentificador();	
 	}
 
-	protected boolean tieneFigurita(Figurita figurita) {
+	boolean tieneFigurita(Figurita figurita) {
 		return album.estaPegada(figurita);	
 	}
 	
-	protected boolean intentarIntercambio (Figurita figurita1, Participante participante1){
+	boolean intentarIntercambio (Figurita figurita1, Participante participante1){
 		if(this.tieneFigurita(figurita1)) {
 			return false;
 		}
@@ -88,7 +88,7 @@ public class Participante {
 		return false;	
 	}
 	
-	protected Figurita consultarPorFigurita(int codFigurita) {
+	Figurita consultarPorFigurita(int codFigurita) {
 		for(Figurita figurita : coleccion) {
 			if (figurita.consultarNumeroIdentificador() == codFigurita){
 			return figurita;
@@ -97,26 +97,26 @@ public class Participante {
 		return null;	
 	}
 
-	protected boolean consultarTieneRepetidas() {
+	boolean consultarTieneRepetidas() {
 		return !coleccion.isEmpty();
 	}
 
-	protected boolean completoPais(String nombrePais) {	
+	boolean completoPais(String nombrePais) {	
 		return this.album.completoPais(nombrePais);
 	}
 
-	protected boolean tieneAlbumExtendido() {
+	boolean tieneAlbumExtendido() {
 		return (this.album instanceof AlbumExtendido);
 	}
 
-	protected boolean tieneAlbumWeb() {
+	boolean tieneAlbumWeb() {
 		return (this.album instanceof AlbumWeb);
 		}
 
-	protected boolean tieneAlbumTradicional() {
+	boolean tieneAlbumTradicional() {
 		return (this.album instanceof AlbumTradicional);
 	}
-	
+//metodos auxiliares de la clase	
 	private void intercambiarFiguritaEnColeccion(Figurita f1, Figurita f2) {
 		coleccion.add(f1);
 		coleccion.remove(f2);

@@ -14,7 +14,7 @@ public class AlbumExtendido extends AlbumTradicional {
 /*	Metodo con sobrecarga porque hereda pegarFigurita(Figurita figurita) de la clase Figurita, 
   	pero al recibir una FiguritaTop10, utiliza el metodo pegarFigurita propio de esta clase.
 */
-	protected String pegarFigurita(FiguritaTop10 figurita){
+	String pegarFigurita(FiguritaTop10 figurita){
 		String pegada ="";
 		FiguritaTop10 top = (FiguritaTop10) figurita;
 		Figurita [] pais = mundiales.get(top.consultarMundial());
@@ -28,7 +28,7 @@ public class AlbumExtendido extends AlbumTradicional {
 /*	Metodo con sobrecarga porque hereda estaPegada(Figurita figurita) de la Class AlbumTradicional, 
   	pero al recibir una FiguritaTop10, utiliza el metodo estaPegada propio de esta clase.
 */	
-	protected boolean estaPegada(FiguritaTop10 figurita) {
+	boolean estaPegada(FiguritaTop10 figurita) {
 		Figurita[] mundial = mundiales.get(figurita.consultarPais());
 			if(mundial[figurita.consultarBalon()]!=null) {
 				return true;
@@ -38,10 +38,11 @@ public class AlbumExtendido extends AlbumTradicional {
 	
 	
 	@Override 
-	protected boolean albumLleno() {	
+	boolean albumLleno() {	
 		return super.albumLleno() && this.seccionMundialesLlena();	
 	}
 	
+	//metodos auxiliares de la clase
 	private boolean seccionMundialesLlena(){
 		for (Figurita[] mundial : mundiales.values()){
 			for (Figurita figurita : mundial){

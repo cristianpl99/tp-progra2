@@ -9,22 +9,22 @@ public class FiguritaTop10 extends Figurita {
 		this.balon = balon;	
 	}
 	
-	protected String consultarMundial() {
+	String consultarMundial() {
 		return this.mundial;
 	}
 	
-	protected int consultarBalon() {
+	int consultarBalon() {
 		return this.balon;
 	}
 	
 	@Override
-	protected double consultarValor(){
+	double consultarValor(){
 		if (esBalonOro(this.balon)) {
 		return this.consultarValor() * 1.2 ;
 		}
 		return this.consultarValor() * 1.1;
 	}
-	
+//metodos auxiliares de la clase
 	private boolean esBalonOro(int balon) {
 		return (balon == 0);
 	}

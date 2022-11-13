@@ -8,7 +8,7 @@ AlbumTradicional(String[] equipos, int lugaresPorPais, String[] premios) {
 	this.premios = premios;
 }
 
-protected final String aplicarSorteoInstantaneo() {
+final String aplicarSorteoInstantaneo() {
 	if (this.premios == null) {
 		return "El sorteo ya fue hecho previamente";
 	}
